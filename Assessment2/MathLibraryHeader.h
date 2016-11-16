@@ -53,17 +53,30 @@ public:
 	Vec4 CrossProduct(Vec4 other);
 };
 
-//class Mat2
-//{
-//
-//};
-//
-//class Mat3
-//{
-//
-//};
-//
-//class Mat4
-//{
-//
-//};
+class Mat2
+{
+private:
+	float data[4];
+public:
+	Mat2() {};
+	//Mat2(float x1, float y1, float x2, float y2);
+	Mat2(float Array[4]);
+};
+
+class Mat3
+{
+private:
+	float data[9];
+public:
+	Mat3() {};
+	Mat3(float x1, float y1, float z1, float x2, float y2, float z2, float x3, float y3, float z3);
+};
+
+class Mat4
+{
+private:
+float data[16];
+public:
+	Mat4() {};
+	Mat4(float x1, float y1, float z1, float t1, float x2, float y2, float z2, float t2, float x3, float y3, float z3, float t3, float b1, float b2, float b3, float b4);
+};

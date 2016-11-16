@@ -33,8 +33,6 @@ float Vec2::DotProduct(Vec2 other)
 	return x*other.x + y*other.y;
 }
 
-
-
 Vec3::Vec3(float a, float b, float c) {
 	x = a;
 	y = b;
@@ -109,68 +107,47 @@ Vec4 Vec4::CrossProduct(Vec4 other)
 	return Vec4(Crossx, Crossy, Crossz);
 }
 
-/*class Mat2
-{
-private:
-	float mat2[4];
-public:
-	Mat2() {};
-	Mat2(float x1, float x2, float y1, float y2) {
-		mat2[0] = x1;
-		mat2[1] = y1;
-		mat2[2] = x2;
-		mat2[3] = y2;
-	}
-};*/
 
-//class Mat3
-//{
-//private: 
-//	float mat3[9];
-//public:
-//	Mat3() {};
-//	Mat3(float x1, float x2, float x3, float y1, float y2, float y3, float z1, float z2, float z3 ) {
-//		mat3[0] = x1;
-//		mat3[1] = y1;
-//		mat3[2] = z1;
-//		mat3[3] = x2;
-//		mat3[4] = y2;
-//		mat3[5] = z2;
-//		mat3[6] = x3;
-//		mat3[7] = y3;
-//		mat3[8] = z3;
-//	}
-//};
-//
-//class Mat4
-//{
-//private:
-//	float mat4[16];
-//public:
-//	Mat4() {};
-//	Mat4(float x1, float x2, float x3, float y1, float y2, float y3, float z1, float z2, float z3, float t1, float t2, float t3, float b1, float b2, float b3, float b4) {
-//		mat4[0] = x1;
-//		mat4[1] = y1;
-//		mat4[2] = z1;
-//		mat4[3] = t1;
-//		mat4[4] = x2;
-//		mat4[5] = y2;
-//		mat4[6] = z2;
-//		mat4[7] = t2;
-//		mat4[8] = x3;
-//		mat4[9] = y3;
-//		mat4[10] = z3;
-//		mat4[11] = t3;
-//		mat4[12] = b1;
-//		mat4[13] = b2;
-//		mat4[14] = b3;
-//		mat4[15] = b4;
-//	}
-//};
-//
-//class Math
-//{
-//private:
-//
-//public:
-//};
+//Mat2::Mat2(float x1, float y1, float x2, float y2) {
+//	data[0] = x1;
+//	data[1] = y1;
+//	data[2] = x2;
+//	data[3] = y2;
+//}
+Mat2::Mat2(float Array[4]) {
+	for (int i = 0; i < 3; i++)
+	{
+		data[i] = Array[i];
+	}
+}
+
+Mat3::Mat3(float x1, float y1, float z1, float x2, float y2, float z2, float x3, float y3, float z3) {
+	data[0] = x1;
+	data[1] = y1;
+	data[2] = z1;
+	data[3] = x2;
+	data[4] = y2;
+	data[5] = z2;
+	data[6] = x3;
+	data[7] = y3;
+	data[8] = z3;
+}
+
+Mat4::Mat4(float x1, float y1, float z1, float t1, float x2, float y2, float z2, float t2, float x3, float y3, float z3, float t3, float b1, float b2, float b3, float b4) {
+	data[0] = x1;
+	data[1] = y1;
+	data[2] = z1;
+	data[3] = t1;
+	data[4] = x2;
+	data[5] = y2;
+	data[6] = z2;
+	data[7] = t2;
+	data[8] = x3;
+	data[9] = y3;
+	data[10] = z3;
+	data[11] = t3;
+	data[12] = b1;
+	data[13] = b2;
+	data[14] = b3;
+	data[15] = b4;
+}
