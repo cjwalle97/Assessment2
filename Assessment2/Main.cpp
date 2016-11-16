@@ -13,6 +13,5 @@ int main()
 	Vec4 g = a.Normalize();
 	assert(a.DotProduct(b));
 	Vec4 h = a.CrossProduct(b);
-	float Array[4] = { 1,2,3,4 };
 	Mat2(Array[4]);
 }
