@@ -110,7 +110,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="VectorsandMatrices.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MathLibrary.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MathLibraryHeader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
