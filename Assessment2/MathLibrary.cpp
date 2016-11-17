@@ -6,28 +6,44 @@ Vec2::Vec2(float a, float b) {
 	x = a;
 	y = b;
 }
-
+//Name: operator+
+//Type: Vec2
+//Description: overloads the + operator in order allow the addition of one 2D Vector to another 
 Vec2 Vec2::operator + (Vec2 other)
 {
 	return Vec2(x + other.x, y + other.y);
 }
-
+//Name: operator-
+//Type: Vec2
+//Description: overloads the - operator in order to allow the subtraction of one 2D Vector from another
 Vec2 Vec2::operator - (Vec2 other)
 {
 	return Vec2(x - other.x, y - other.y);
 }
+//Name: operator*
+//Type: Vec2
+//Description: overloads the * operator to allow a 2D Vector to be multiplied by a scalar float
 Vec2 Vec2::operator * (float scalar)
 {
 	return Vec2(x * scalar, y * scalar);
 }
+//Name: Magnitude
+//Type: float
+//Description: finds the square root of all axis on the Vector added together after squaring them
 float Vec2::Magnitude()
 {
 	return sqrt((x*x) + (y*y));
 }
+//Name: Normalize
+//Type: Vec2
+//Description: Normalizes a 2d Vector by dividing all axis by the Vector's Magnitude
 Vec2 Vec2::Normalize()
 {
 	return Vec2(x / Magnitude(), y / Magnitude());
 }
+//Name: DotProduct
+//Type: float
+//Description: adds the products of all the axis of two 2D Vectors together
 float Vec2::DotProduct(Vec2 other)
 {
 	return x*other.x + y*other.y;
@@ -38,18 +54,29 @@ Vec3::Vec3(float a, float b, float c) {
 	y = b;
 	z = c;
 }
+//Name: operator+
+//Type: Vec3
+//Description:
 Vec3 Vec3::operator + (Vec3 other)
 {
 	return Vec3(x + other.x, y + other.y, z + other.z);
 }
+//Name: operator-
+//Type: Vec3
+//Description:
 Vec3 Vec3::operator - (Vec3 other)
 {
 	return Vec3(x - other.x, y - other.y, z - other.z);
 }
+//Name: operator*
+//Type: Vec3
+//Description:
 Vec3 Vec3::operator *(float scalar)
 {
 	return Vec3(x * scalar, y* scalar, z * scalar);
 }
+//Name: Magnitude
+//Type: 
 float Vec3::Magnitude()
 {
 	return sqrt((x*x) + (y*y) + (z*z));
