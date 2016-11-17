@@ -107,18 +107,23 @@ Vec4 Vec4::CrossProduct(Vec4 other)
 	return Vec4(Crossx, Crossy, Crossz);
 }
 
-
-//Mat2::Mat2(float x1, float y1, float x2, float y2) {
-//	data[0] = x1;
-//	data[1] = y1;
-//	data[2] = x2;
-//	data[3] = y2;
+Mat2::Mat2(float x1, float y1, float x2, float y2) {
+	data[0] = x1;
+	data[1] = y1;
+	data[2] = x2;
+	data[3] = y2;
+}
+//Mat2::Mat2(float Array[4]) {
+//	for (int i = 0; i < 3; i++)
+//	{
+//		Array[i] = data[i];
+//	}
 //}
-Mat2::Mat2(float Array[4]) {
-	for (int i = 0; i < 3; i++)
-	{
-		data[i] = Array[i];
-	}
+
+Mat2 Mat2::CrossProduct(Mat2 other)
+{
+	return Mat2((data[0] * other.data[0]) - (data[1] * other.data[2]), (data[0] * other.data[1]) - (data[1] * other.data[3]),
+		(data[2] * other.data[0]) - (data[3] * other.data[1]), (data[2] * other.data[2]) - (data[3] * data[3]));
 }
 
 Mat3::Mat3(float x1, float y1, float z1, float x2, float y2, float z2, float x3, float y3, float z3) {
@@ -131,6 +136,20 @@ Mat3::Mat3(float x1, float y1, float z1, float x2, float y2, float z2, float x3,
 	data[6] = x3;
 	data[7] = y3;
 	data[8] = z3;
+}
+
+Mat3 Mat3::CrossProduct(Mat3 other)
+{
+	return Mat3(
+		(data[0] * other.data[0]) - (data[1] * other.data[1]) - (data[2] * other.data[2]),
+		(data[0] * other.data[3]) - (data[1] * other.data[4]) - (data[2] * other.data[5]),
+		(data[0] * other.data[6]) - (data[1] * other.data[7]) - (data[2] * other.data[8]),
+		(data[3] * other.data[0]) - (data[4] * other.data[1]) - (data[5] * other.data[2]),
+		(data[3] * other.data[3]) - (data[4] * other.data[4]) - (data[5] * other.data[5]),
+		(data[3] * other.data[6]) - (data[4] * other.data[7]) - (data[5] * other.data[8]),
+		(data[6] * other.data[0]) - (data[7] * other.data[1]) - (data[8] * other.data[2]),
+		(data[6] * other.data[3]) - (data[7] * other.data[4]) - (data[8] * other.data[5]),
+		(data[6] * other.data[6]) - (data[7] * other.data[7]) - (data[8] * other.data[8]));
 }
 
 Mat4::Mat4(float x1, float y1, float z1, float t1, float x2, float y2, float z2, float t2, float x3, float y3, float z3, float t3, float b1, float b2, float b3, float b4) {
@@ -150,4 +169,26 @@ Mat4::Mat4(float x1, float y1, float z1, float t1, float x2, float y2, float z2,
 	data[13] = b2;
 	data[14] = b3;
 	data[15] = b4;
+}
+
+Mat4 Mat4::CrossProduct(Mat4 other)
+{
+	return Mat4(
+		(data[0] * other.data[0]) - (data[1] * other.data[1]) - (data[2] * other.data[2]) - (data[3] * other.data[3]),
+		(data[0] * other.data[4]) - (data[1] * other.data[5]) - (data[2] * other.data[6]) - (data[3] * other.data[7]),
+		(data[0] * other.data[8]) - (data[1] * other.data[9]) - (data[2] * other.data[10]) - (data[3] * other.data[11]),
+		(data[0] * other.data[12]) - (data[1] * other.data[13]) - (data[2] * other.data[14]) - (data[3] * other.data[15]),
+		(data[4] * other.data[0]) - (data[5] * other.data[1]) - (data[6] * other.data[2]) - (data[7] * other.data[3]),
+		(data[4] * other.data[4]) - (data[5] * other.data[5]) - (data[6] * other.data[6]) - (data[7] * other.data[7]),
+		(data[4] * other.data[8]) - (data[5] * other.data[9]) - (data[6] * other.data[10]) - (data[7] * other.data[11]),
+		(data[4] * other.data[12]) - (data[5] * other.data[13]) - (data[6] * other.data[14]) - (data[7] * other.data[15]),
+		(data[8] * other.data[0]) - (data[9] * other.data[1]) - (data[10] * other.data[2]) - (data[11] * other.data[3]),
+		(data[8] * other.data[4]) - (data[9] * other.data[5]) - (data[10] * other.data[6]) - (data[11] * other.data[7]),
+		(data[8] * other.data[8]) - (data[9] * other.data[9]) - (data[10] * other.data[10]) - (data[11] * other.data[11]),
+		(data[8] * other.data[12]) - (data[9] * other.data[13]) - (data[10] * other.data[14]) - (data[11] * other.data[15]),
+		(data[12] * other.data[0]) - (data[13] * other.data[1]) - (data[14] * other.data[2]) - (data[15] * other.data[3]),
+		(data[12] * other.data[4]) - (data[13] * other.data[5]) - (data[14] * other.data[6]) - (data[15] * other.data[7]),
+		(data[12] * other.data[8]) - (data[13] * other.data[9]) - (data[14] * other.data[10]) - (data[15] * other.data[11]),
+		(data[12] * other.data[12]) - (data[13] * other.data[13]) - (data[14] * other.data[14]) - (data[15] * other.data[15])
+		);
 }
