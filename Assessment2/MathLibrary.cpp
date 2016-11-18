@@ -96,7 +96,7 @@ Vec3 Vec3::Normalize()
 }
 //Name: DotProduct
 //Type: float 
-//Description: 
+//Description: adds the products of all the axis of two 3D Vectors together
 float Vec3::DotProduct(Vec3 other)
 {
 	return x*other.x + y*other.y + z*other.z;
@@ -157,7 +157,7 @@ Vec4 Vec4::Normalize()
 }
 //Name: DotProduct
 //Type: float
-//Description:
+//Description: adds the products of all the axis of two 4D Vectors together
 float Vec4::DotProduct(Vec4 other)
 {
 	return x*other.x + y*other.y + z*other.z;
@@ -270,3 +270,9 @@ Mat4 Mat4::Multiplication(Mat4 other)
 		(data[12] * other.data[12]) - (data[13] * other.data[13]) - (data[14] * other.data[14]) - (data[15] * other.data[15])
 		);
 }
+//Name: AddMat3
+//Type: Mat4
+//Description: 
+//Mat4 Mat4::AddMat3(Mat3 other){
+//
+//}
