@@ -200,7 +200,9 @@ Mat2 Mat2::Multiplication(Mat2 other)
 //Name: Mat3
 //Type: Mat3
 //Description: 3D Matrix
-Mat3::Mat3(float x1, float y1, float z1, float x2, float y2, float z2, float x3, float y3, float z3) {
+Mat3::Mat3(float x1, float y1, float z1,
+	float x2, float y2, float z2,
+	float x3, float y3, float z3) {
 	data[0] = x1;
 	data[1] = y1;
 	data[2] = z1;
@@ -228,7 +230,10 @@ Mat3 Mat3::Multiplication(Mat3 other)
 		(data[6] * other.data[6]) - (data[7] * other.data[7]) - (data[8] * other.data[8]));
 }
 
-Mat4::Mat4(float x1, float y1, float z1, float t1, float x2, float y2, float z2, float t2, float x3, float y3, float z3, float t3, float b1, float b2, float b3, float b4) {
+Mat4::Mat4(float x1, float y1, float z1, float t1,
+	float x2, float y2, float z2, float t2,
+	float x3, float y3, float z3, float t3,
+	float b1, float b2, float b3, float b4) {
 	data[0] = x1;
 	data[1] = y1;
 	data[2] = z1;
