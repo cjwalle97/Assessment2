@@ -1,21 +1,23 @@
 #include <iostream>
 #include "MathLibraryHeader.h"
 
-
+//Name: Vec2
+//Type: Vec2
+//Description: 2D Vector
 Vec2::Vec2(float a, float b) {
 	x = a;
 	y = b;
 }
 //Name: operator+
 //Type: Vec2
-//Description: overloads the + operator in order allow the addition of one 2D Vector to another 
+//Description: overloads the + operator in order to add one 2D Vector to another 
 Vec2 Vec2::operator + (Vec2 other)
 {
 	return Vec2(x + other.x, y + other.y);
 }
 //Name: operator-
 //Type: Vec2
-//Description: overloads the - operator in order to allow the subtraction of one 2D Vector from another
+//Description: overloads the - operator in order to subtract one 2D Vector from another
 Vec2 Vec2::operator - (Vec2 other)
 {
 	return Vec2(x - other.x, y - other.y);
@@ -49,6 +51,9 @@ float Vec2::DotProduct(Vec2 other)
 	return x*other.x + y*other.y;
 }
 
+//Name: Vec3
+//Type: Vec3
+//Description: 3D Vector
 Vec3::Vec3(float a, float b, float c) {
 	x = a;
 	y = b;
@@ -56,14 +61,14 @@ Vec3::Vec3(float a, float b, float c) {
 }
 //Name: operator+
 //Type: Vec3
-//Description:
+//Description: overloads the + operator in order to add the axis of one Vector to another
 Vec3 Vec3::operator + (Vec3 other)
 {
 	return Vec3(x + other.x, y + other.y, z + other.z);
 }
 //Name: operator-
 //Type: Vec3
-//Description:
+//Description: 
 Vec3 Vec3::operator - (Vec3 other)
 {
 	return Vec3(x - other.x, y - other.y, z - other.z);
@@ -76,19 +81,29 @@ Vec3 Vec3::operator *(float scalar)
 	return Vec3(x * scalar, y* scalar, z * scalar);
 }
 //Name: Magnitude
-//Type: 
+//Type: float
+//Description: finds the square root of all axis on the Vector added together after squaring them 
 float Vec3::Magnitude()
 {
 	return sqrt((x*x) + (y*y) + (z*z));
 }
+//Name: Normalize
+//Type: Vec3
+//Description: 
 Vec3 Vec3::Normalize()
 {
 	return Vec3(x / Magnitude(), y / Magnitude(), z / Magnitude());
 }
+//Name: DotProduct
+//Type: float 
+//Description: 
 float Vec3::DotProduct(Vec3 other)
 {
 	return x*other.x + y*other.y + z*other.z;
 }
+//Name: CrossProduct
+//Type: Vec3
+//Description: 
 Vec3 Vec3::CrossProduct(Vec3 other)
 {
 	float Crossx = y*other.z - z* other.y;
@@ -97,35 +112,59 @@ Vec3 Vec3::CrossProduct(Vec3 other)
 	return Vec3(Crossx, Crossy, Crossz);
 }
 
+//Name: Vec4
+//Type: Vec4
+//Description: 4D Vector
 Vec4::Vec4(float a, float b, float c) {
 	x = a;
 	y = b;
 	z = c;
 }
+//Name: operator+
+//TYpe: Vec4
+//Description:
 Vec4 Vec4::operator + (Vec4 other)
 {
 	return Vec4(x + other.x, y + other.y, z + other.z);
 }
+//Name: operator -
+//Type: Vec4
+//Description:
 Vec4 Vec4::operator - (Vec4 other)
 {
 	return Vec4(x - other.x, y - other.y, z - other.z);
 }
+//Name: operator*
+//Type: Vec4
+//Description:
 Vec4 Vec4::operator * (float scalar)
 {
 	return Vec4(x*scalar, y*scalar, z*scalar);
 }
+//Name: Magnitude
+//Type: float
+//Description: finds the square root of all axis on the Vector added together after squaring them
 float Vec4::Magnitude()
 {
 	return sqrt((x*x) + (y*y) + (z*z));
 }
+//Name: Normalize
+//Type: Vec4
+//Description:
 Vec4 Vec4::Normalize()
 {
 	return Vec4(x / Magnitude(), y / Magnitude(), z / Magnitude());
 }
+//Name: DotProduct
+//Type: float
+//Description:
 float Vec4::DotProduct(Vec4 other)
 {
 	return x*other.x + y*other.y + z*other.z;
 }
+//Name: CrossProduct
+//Type: Vec4
+//Description:
 Vec4 Vec4::CrossProduct(Vec4 other)
 {
 	float Crossx = y*other.z - z* other.y;
@@ -134,6 +173,9 @@ Vec4 Vec4::CrossProduct(Vec4 other)
 	return Vec4(Crossx, Crossy, Crossz);
 }
 
+//Name:
+//Type:
+//Description:
 Mat2::Mat2(float x1, float y1, float x2, float y2) {
 	data[0] = x1;
 	data[1] = y1;
@@ -146,13 +188,18 @@ Mat2::Mat2(float x1, float y1, float x2, float y2) {
 //		Array[i] = data[i];
 //	}
 //}
-
-Mat2 Mat2::CrossProduct(Mat2 other)
+//Name: Multiplication
+//Type: Mat2
+//Description:
+Mat2 Mat2::Multiplication(Mat2 other)
 {
 	return Mat2((data[0] * other.data[0]) - (data[1] * other.data[2]), (data[0] * other.data[1]) - (data[1] * other.data[3]),
 		(data[2] * other.data[0]) - (data[3] * other.data[1]), (data[2] * other.data[2]) - (data[3] * data[3]));
 }
 
+//Name: Mat3
+//Type: Mat3
+//Description: 3D Matrix
 Mat3::Mat3(float x1, float y1, float z1, float x2, float y2, float z2, float x3, float y3, float z3) {
 	data[0] = x1;
 	data[1] = y1;
@@ -164,8 +211,10 @@ Mat3::Mat3(float x1, float y1, float z1, float x2, float y2, float z2, float x3,
 	data[7] = y3;
 	data[8] = z3;
 }
-
-Mat3 Mat3::CrossProduct(Mat3 other)
+//Name: Multiplication
+//Type: Mat3
+//Description:
+Mat3 Mat3::Multiplication(Mat3 other)
 {
 	return Mat3(
 		(data[0] * other.data[0]) - (data[1] * other.data[1]) - (data[2] * other.data[2]),
@@ -197,8 +246,10 @@ Mat4::Mat4(float x1, float y1, float z1, float t1, float x2, float y2, float z2,
 	data[14] = b3;
 	data[15] = b4;
 }
-
-Mat4 Mat4::CrossProduct(Mat4 other)
+//Name: Multiplication
+//Type: Mat4
+//Description:
+Mat4 Mat4::Multiplication(Mat4 other)
 {
 	return Mat4(
 		(data[0] * other.data[0]) - (data[1] * other.data[1]) - (data[2] * other.data[2]) - (data[3] * other.data[3]),
