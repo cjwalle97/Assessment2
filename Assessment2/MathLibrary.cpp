@@ -10,14 +10,14 @@ Vec2::Vec2(float a, float b) {
 }
 //Name: operator+
 //Type: Vec2
-//Description: overloads the + operator in order to add one 2D Vector to another 
+//Description: overloads the + operator in order to add the axis one Vector to another 
 Vec2 Vec2::operator + (Vec2 other)
 {
 	return Vec2(x + other.x, y + other.y);
 }
 //Name: operator-
 //Type: Vec2
-//Description: overloads the - operator in order to subtract one 2D Vector from another
+//Description: overloads the - operator in order to subtract the axis of one Vector from another
 Vec2 Vec2::operator - (Vec2 other)
 {
 	return Vec2(x - other.x, y - other.y);
@@ -45,7 +45,7 @@ Vec2 Vec2::Normalize()
 }
 //Name: DotProduct
 //Type: float
-//Description: adds the products of all the axis of two 2D Vectors together
+//Description: adds the products of all the axis of two Vectors together
 float Vec2::DotProduct(Vec2 other)
 {
 	return x*other.x + y*other.y;
@@ -68,7 +68,7 @@ Vec3 Vec3::operator + (Vec3 other)
 }
 //Name: operator-
 //Type: Vec3
-//Description: 
+//Description: overloads the - operator in order to subtract the axis of one Vector from another
 Vec3 Vec3::operator - (Vec3 other)
 {
 	return Vec3(x - other.x, y - other.y, z - other.z);
@@ -103,7 +103,7 @@ float Vec3::DotProduct(Vec3 other)
 }
 //Name: CrossProduct
 //Type: Vec3
-//Description: 
+//Description: finds the Crossproduct of 2 Vectors by multipling and subtracting their axis
 Vec3 Vec3::CrossProduct(Vec3 other)
 {
 	float Crossx = y*other.z - z* other.y;
@@ -122,21 +122,21 @@ Vec4::Vec4(float a, float b, float c) {
 }
 //Name: operator+
 //TYpe: Vec4
-//Description:
+//Description: overloads the + operator in order to add the axis of one Vector to another 
 Vec4 Vec4::operator + (Vec4 other)
 {
 	return Vec4(x + other.x, y + other.y, z + other.z);
 }
 //Name: operator -
 //Type: Vec4
-//Description:
+//Description: overloads the - operator in order to subtract the axis of one Vector to another  
 Vec4 Vec4::operator - (Vec4 other)
 {
 	return Vec4(x - other.x, y - other.y, z - other.z);
 }
 //Name: operator*
 //Type: Vec4
-//Description:
+//Description: overloads the * operator in order to add the axis of one Vector to another
 Vec4 Vec4::operator * (float scalar)
 {
 	return Vec4(x*scalar, y*scalar, z*scalar);
@@ -150,7 +150,7 @@ float Vec4::Magnitude()
 }
 //Name: Normalize
 //Type: Vec4
-//Description:
+//Description: Normalizes the Vector by dividing all axis by Magnitude
 Vec4 Vec4::Normalize()
 {
 	return Vec4(x / Magnitude(), y / Magnitude(), z / Magnitude());
@@ -164,7 +164,7 @@ float Vec4::DotProduct(Vec4 other)
 }
 //Name: CrossProduct
 //Type: Vec4
-//Description:
+//Description: finds the Crossproduct of 2 Vectors by multipling and subtracting their axis
 Vec4 Vec4::CrossProduct(Vec4 other)
 {
 	float Crossx = y*other.z - z* other.y;
@@ -173,9 +173,9 @@ Vec4 Vec4::CrossProduct(Vec4 other)
 	return Vec4(Crossx, Crossy, Crossz);
 }
 
-//Name:
-//Type:
-//Description:
+//Name: Mat2
+//Type: Mat2
+//Description: 2D Matrix
 Mat2::Mat2(float x1, float y1, float x2, float y2) {
 	data[0] = x1;
 	data[1] = y1;
@@ -190,7 +190,7 @@ Mat2::Mat2(float x1, float y1, float x2, float y2) {
 //}
 //Name: Multiplication
 //Type: Mat2
-//Description:
+//Description: finds the product of two Matrices
 Mat2 Mat2::Multiplication(Mat2 other)
 {
 	return Mat2((data[0] * other.data[0]) - (data[1] * other.data[2]), (data[0] * other.data[1]) - (data[1] * other.data[3]),
@@ -215,7 +215,7 @@ Mat3::Mat3(float x1, float y1, float z1,
 }
 //Name: Multiplication
 //Type: Mat3
-//Description:
+//Description: finds the product of two Matrices
 Mat3 Mat3::Multiplication(Mat3 other)
 {
 	return Mat3(
@@ -229,7 +229,31 @@ Mat3 Mat3::Multiplication(Mat3 other)
 		(data[6] * other.data[3]) - (data[7] * other.data[4]) - (data[8] * other.data[5]),
 		(data[6] * other.data[6]) - (data[7] * other.data[7]) - (data[8] * other.data[8]));
 }
+//Name: SetRotateX
+//Type: Mat3
+//Description: rotates a Matrix around it's X axis
+Mat3 Mat3::SetRotateX(float rotation)
+{
 
+}
+//Name: SetRotateY
+//Type: Mat3
+//Description: rotates a Marix around it's Y axis
+//Mat3 Mat3::SetRotateY(float rotation)
+//{
+//
+//}
+//Name: SetRotateZ
+//Type: Mat3
+//Description: rotates a Matrix around it's Z axis
+//Mat3 Mat3::SetRotateZ(float rotation)
+//{
+//
+//}
+
+//Name: Mat4
+//Type: Mat4
+//Description: finds the product of two Matrices
 Mat4::Mat4(float x1, float y1, float z1, float t1,
 	float x2, float y2, float z2, float t2,
 	float x3, float y3, float z3, float t3,
@@ -275,9 +299,24 @@ Mat4 Mat4::Multiplication(Mat4 other)
 		(data[12] * other.data[12]) - (data[13] * other.data[13]) - (data[14] * other.data[14]) - (data[15] * other.data[15])
 		);
 }
+//Name: SetRotateX
+//Type: Mat4
+//Description: rotates a
+//Mat4 Mat4::SetRotateX(float rotation)
+//{
+//
+//}
+//Mat4 Mat4::SetRotateY(float rotation)
+//{
+//
+//}
+//Mat4 Mat4::SetRotateX(float rotation)
+//{
+//
+//}
 //Name: AddMat3
 //Type: Mat4
-//Description: 
+//Description: adds a 3D Matrix to a 4D Matrix
 //Mat4 Mat4::AddMat3(Mat3 other){
-//
+//	return Mat4 ()
 //}

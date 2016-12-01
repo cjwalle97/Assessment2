@@ -71,9 +71,12 @@ private:
 public:
 	Mat3() {};
 	Mat3(float x1, float y1, float z1,
-		float x2, float y2, float z2, 
+		float x2, float y2, float z2,
 		float x3, float y3, float z3);
 	Mat3 Multiplication(Mat3 other);
+	//Mat3 SetRotateX(float rotation);
+	/*Mat3 SetRotateY(float rotation);
+	Mat3 SetRotateZ(float rotation);*/
 };
 
 class Mat4
@@ -87,5 +90,8 @@ public:
 		float x3, float y3, float z3, float t3, 
 		float b1, float b2, float b3, float b4);
 	Mat4 Multiplication(Mat4 other);
-	//Mat4 AddMat3(Mat3 other);
+	/*Mat4 SetRotateX(float rotation);
+	Mat4 SetRotateY(float rotation);
+	Mat4 SetRotateZ(float rotation);
+	Mat4 AddMat3(Mat3 other);*/
 };
