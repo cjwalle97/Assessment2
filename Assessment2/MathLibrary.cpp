@@ -232,23 +232,31 @@ Mat3 Mat3::Multiplication(Mat3 other)
 //Name: SetRotateX
 //Type: Mat3
 //Description: rotates a Matrix around it's X axis
-Mat3 Mat3::SetRotateX(float rotation)
-{
-
-}
-//Name: SetRotateY
-//Type: Mat3
-//Description: rotates a Marix around it's Y axis
+//Mat3 Mat3::SetRotateX(float rotation)
+//{
+//	return Mat3((data[0] * rotation) , (data[1] * rotation) , (data[2] * rotation),
+//		(data[3] * rotation) , (data[4] * 0) , (data[5] * 0),
+//		(data[6] * rotation) , (data[7] * 0) , (data[8] * 0));
+//}
+////Name: SetRotateY
+////Type: Mat3
+////Description: rotates a Marix around it's Y axis
 //Mat3 Mat3::SetRotateY(float rotation)
 //{
-//
+//	return Mat3(
+//		(data[0] * 0), (data[1] * 0), (data[2] * 0),
+//		(data[3] * 0), (data[4] * rotation ), (data[5] * rotation), 
+//		(data[6] * 0), (data[7] * rotation), (data[8] * 0))
 //}
-//Name: SetRotateZ
-//Type: Mat3
-//Description: rotates a Matrix around it's Z axis
+////Name: SetRotateZ
+////Type: Mat3
+////Description: rotates a Matrix around it's Z axis
 //Mat3 Mat3::SetRotateZ(float rotation)
 //{
-//
+//	return Mat3(
+//		(data[0] * ), (data[1] * ), (data[2] * ), 
+//		(data[3] * ), (data[4] * ), (data[5] * ),
+//		(data[6] * ), (data[7] * ), (data[8] * ))
 //}
 
 //Name: Mat4
@@ -301,18 +309,35 @@ Mat4 Mat4::Multiplication(Mat4 other)
 }
 //Name: SetRotateX
 //Type: Mat4
-//Description: rotates a
+//Description: rotates a Matrix around it's X axis
 //Mat4 Mat4::SetRotateX(float rotation)
 //{
-//
+//	return Mat4((data[0] * rotation), (data[1] * rotation), (data[2] * rotation), (data[3] * rotation),
+//		(data[4] * rotation), (data[5] * 0), (data[6] * 0), (data[7] * 0),
+//		(data[8] * rotation), (data[9] * 0), (data[10] * 0), (data[11] * 0),
+//		(data[12] * rotation), (data[13] * 0), (data[14] * 0), (data[15] * 0))
 //}
+////Name: SetRotateY
+////Type: Mat4
+////Description: rotates a Matrix around it's Y axis
 //Mat4 Mat4::SetRotateY(float rotation)
 //{
-//
+//	return Mat4(
+//		(data[0] * 0), (data[1] * ), (data[2] * ), (data[3] * ),
+//		(data[4] * ), (data[5] * ), (data[6] * ), (data[7] * ),
+//		(data[8] * ), (data[9] * ), (data[10] * ), (data[11] * ),
+//		(data[12] * ), (data[13] * ), (data[14] * ), (data[15] * ))
 //}
-//Mat4 Mat4::SetRotateX(float rotation)
+////Name: SetRotateZ
+////Type: Mat4
+////Description: rotates a Matrix around it's Z axis
+//Mat4 Mat4::SetRotateZ(float rotation)
 //{
-//
+//	return Mat4(
+//		(data[0] * ), (data[1] * ), (data[2] * ), (data[3] * ),
+//		(data[4] * ), (data[5] * ), (data[6] * ), (data[7] * ),
+//		(data[8] * ), (data[9] * ), (data[10] * ), (data[11] * ),
+//		(data[12] * ), (data[13] * ), (data[14] * ), (data[15] * ))
 //}
 //Name: AddMat3
 //Type: Mat4
