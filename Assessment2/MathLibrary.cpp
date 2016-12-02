@@ -15,6 +15,13 @@ Vec2 Vec2::operator + (Vec2 other)
 {
 	return Vec2(x + other.x, y + other.y);
 }
+//Name operator+=
+//Tyoe Vec2
+//description: overlads the += operator in order to add a float to the axis of a Vector
+Vec2 Vec2::operator += (Vec2 other)
+{
+	return  Vec
+}
 //Name: operator-
 //Type: Vec2
 //Description: overloads the - operator in order to subtract the axis of one Vector from another

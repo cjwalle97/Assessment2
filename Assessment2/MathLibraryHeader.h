@@ -9,6 +9,7 @@ public:
 	Vec2() {};
 	Vec2(float a, float b);
 	Vec2 operator + (Vec2 other);
+	Vec2 operator += (Vec2 other);
 	Vec2 operator - (Vec2 other);
 	Vec2 operator * (float scalar);
 	float Magnitude();
